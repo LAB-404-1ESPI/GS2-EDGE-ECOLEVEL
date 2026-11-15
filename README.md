@@ -175,6 +175,8 @@ O dashboard do EcoLevel é uma aplicação web desenvolvida com React e disponib
 
 [EcoLevel - Repositório](https://github.com/LAB-404-1ESPI/GS2-EDGE-ECOLEVEL)
 
+[EcoLevel - Wokwi](https://wokwi.com/projects/480538712904501249)
+
 
 ## 🛠️ Tecnologias utilizadas
 
