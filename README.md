@@ -171,9 +171,9 @@ O dashboard do EcoLevel é uma aplicação web desenvolvida com React e disponib
 
 **Acesse a aplicação:**
 
-[EcoLevel — Dashboard](LINK_DO_PROJETO_NA_VERCEL)
+[EcoLevel — Dashboard](https://gs2ecolevel.vercel.app/)
 
-[EcoLevel - Repositório](LINK_DO_REPOSITORIO)
+[EcoLevel - Repositório](https://github.com/LAB-404-1ESPI/GS2-EDGE-ECOLEVEL)
 
 
 ## 🛠️ Tecnologias utilizadas
