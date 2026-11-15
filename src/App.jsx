@@ -17,6 +17,8 @@ import {
   Clock,
   HardDrive,
   Radio,
+  Sun,
+  Moon
 } from "lucide-react";
 
 import {
@@ -121,6 +123,19 @@ function App() {
     configuracoes: "Configurações",
   };
 
+  const [tema, setTema] = useState(() => {
+  return localStorage.getItem("temaEcoLevel") || "escuro";
+});
+
+function alternarTema() {
+  setTema((temaAtual) =>
+    temaAtual === "escuro" ? "claro" : "escuro"
+  );
+}
+
+useEffect(() => {
+  localStorage.setItem("temaEcoLevel", tema);
+}, [tema]);
 
   // CONEXÃO COM SUPABASE E MQTT
 
@@ -297,7 +312,7 @@ function App() {
 
 
   return (
-    <div className="aplicativo">
+    <div className="aplicativo" data-tema={tema}>
 
       {/* BARRA LATERAL */}
 
@@ -359,7 +374,7 @@ function App() {
           </div>
 
           <div>
-            <strong>EcoLevel Edge</strong>
+            <strong>EcoLevel</strong>
             <p>Monitoramento IoT</p>
           </div>
         </div>
@@ -427,6 +442,30 @@ function App() {
 
             <button className="botao-notificacao">
               <Bell size={19} />
+            </button>
+
+            <button
+              type="button"
+              className="botao-tema"
+              onClick={alternarTema}
+              aria-label={
+                tema === "escuro"
+                  ? "Ativar tema claro"
+                  : "Ativar tema escuro"
+              }
+              title={
+                tema === "escuro"
+                  ? "Ativar tema claro"
+                  : "Ativar tema escuro"
+              }
+            >
+              <span className={`icone-tema ${tema}`}>
+                {tema === "escuro" ? (
+                  <Moon size={19} />
+                ) : (
+                  <Sun size={19} />
+                )}
+              </span>
             </button>
 
             <span
@@ -704,7 +743,7 @@ function App() {
             </div>
 
             <footer className="rodape-painel">
-              EcoLevel Edge · Monitoramento de reciclagem
+              EcoLevel · Monitoramento de reciclagem
             </footer>
 
           </section>
@@ -854,7 +893,7 @@ function App() {
             </div>
 
             <footer className="rodape-painel">
-              EcoLevel Edge · Histórico de registros
+              EcoLevel · Histórico de registros
             </footer>
 
           </section>
@@ -1001,7 +1040,7 @@ function App() {
             </div>
 
             <footer className="rodape-painel">
-              EcoLevel Edge · Gerenciamento de máquinas
+              EcoLevel · Gerenciamento de máquinas
             </footer>
 
           </section>
@@ -1016,7 +1055,7 @@ function App() {
             <div className="cabecalho-pagina">
               <h2>Configurações do sistema</h2>
               <p>
-                Consulte as informações e o estado das conexões do EcoLevel Edge.
+                Consulte as informações e o estado das conexões do EcoLevel.
               </p>
             </div>
 
@@ -1184,7 +1223,7 @@ function App() {
                 <div className="informacoes-maquina">
                   <div>
                     <span>Sistema</span>
-                    <strong>EcoLevel Edge</strong>
+                    <strong>EcoLevel</strong>
                   </div>
 
                   <div>
@@ -1203,7 +1242,7 @@ function App() {
             </div>
 
             <div className="cartao-pagina aviso-maquinas">
-              <h3>Sobre o EcoLevel Edge</h3>
+              <h3>Sobre o EcoLevel</h3>
               <p>
                 Plataforma de monitoramento das operações de pesagem,
                 recebimento de dados das máquinas e armazenamento dos registros.
@@ -1213,7 +1252,7 @@ function App() {
             </div>
 
             <footer className="rodape-painel">
-              EcoLevel Edge · Configurações do sistema
+              EcoLevel · Configurações do sistema
             </footer>
 
           </section>

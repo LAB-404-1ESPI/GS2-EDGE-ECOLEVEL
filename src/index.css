@@ -968,3 +968,530 @@ button {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ========================================
+   BOTÃO ANIMADO DE ALTERNÂNCIA DE TEMA
+======================================== */
+
+.botao-tema {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #243529;
+  border-radius: 12px;
+  background: #111a14;
+  color: #f1f5f1;
+  overflow: hidden;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.botao-tema:hover {
+  border-color: #5ce65c;
+  transform: translateY(-1px);
+}
+
+.icone-tema {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: aparecerIconeTema 0.4s ease;
+}
+
+.icone-tema.escuro {
+  color: #a9c8ff;
+}
+
+.icone-tema.claro {
+  color: #f0ad35;
+}
+
+@keyframes aparecerIconeTema {
+  0% {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.4);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+/* ========================================
+   TRANSIÇÃO DAS CORES
+======================================== */
+
+.aplicativo,
+.aplicativo * {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.aplicativo button,
+.aplicativo input,
+.aplicativo select {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+}
+
+/* ========================================
+   TEMA CLARO
+======================================== */
+
+.aplicativo[data-tema="claro"] {
+  background: #f4f7f3;
+  color: #26352a;
+}
+
+.aplicativo[data-tema="claro"] .barra-lateral,
+.aplicativo[data-tema="claro"] .campo-pesquisa,
+.aplicativo[data-tema="claro"] .campo-filtro,
+.aplicativo[data-tema="claro"] .cartao-estatistica,
+.aplicativo[data-tema="claro"] .cartao-grafico,
+.aplicativo[data-tema="claro"] .cartao-tabela,
+.aplicativo[data-tema="claro"] .cartao-pagina {
+  background: #ffffff;
+  border-color: #dce5dc;
+}
+
+.aplicativo[data-tema="claro"] .barra-superior,
+.aplicativo[data-tema="claro"] .rodape-lateral,
+.aplicativo[data-tema="claro"] .informacoes-maquina {
+  border-color: #dce5dc;
+}
+
+.aplicativo[data-tema="claro"] .barra-superior h1,
+.aplicativo[data-tema="claro"] .secao-boas-vindas h2,
+.aplicativo[data-tema="claro"] .cartao-estatistica h2,
+.aplicativo[data-tema="claro"] .cabecalho-grafico h3,
+.aplicativo[data-tema="claro"] .cabecalho-tabela h3,
+.aplicativo[data-tema="claro"] .cabecalho-pagina h2,
+.aplicativo[data-tema="claro"] .cartao-pagina h3,
+.aplicativo[data-tema="claro"] .logotipo,
+.aplicativo[data-tema="claro"] .rodape-lateral strong {
+  color: #26352a;
+}
+
+.aplicativo[data-tema="claro"] .barra-superior p,
+.aplicativo[data-tema="claro"] .secao-boas-vindas p,
+.aplicativo[data-tema="claro"] .cartao-estatistica p,
+.aplicativo[data-tema="claro"] .cartao-estatistica span,
+.aplicativo[data-tema="claro"] .cabecalho-grafico p,
+.aplicativo[data-tema="claro"] .cabecalho-tabela p,
+.aplicativo[data-tema="claro"] .cabecalho-pagina p,
+.aplicativo[data-tema="claro"] .cartao-pagina p,
+.aplicativo[data-tema="claro"] .rodape-lateral p,
+.aplicativo[data-tema="claro"] .titulo-menu,
+.aplicativo[data-tema="claro"] .informacoes-maquina span {
+  color: #718075;
+}
+
+.aplicativo[data-tema="claro"] .item-navegacao {
+  color: #536257;
+}
+
+.aplicativo[data-tema="claro"] .item-navegacao:hover,
+.aplicativo[data-tema="claro"] .item-navegacao.ativo {
+  background: #e7f4e7;
+  color: #239352;
+}
+
+.aplicativo[data-tema="claro"] .icone-estatistica,
+.aplicativo[data-tema="claro"] .icone-cartao-pagina,
+.aplicativo[data-tema="claro"] .icone-rodape {
+  background: #e7f4e7;
+  color: #239352;
+}
+
+.aplicativo[data-tema="claro"] .campo-pesquisa,
+.aplicativo[data-tema="claro"] .campo-filtro {
+  color: #718075;
+}
+
+.aplicativo[data-tema="claro"] .campo-pesquisa input,
+.aplicativo[data-tema="claro"] .campo-filtro select {
+  color: #26352a;
+}
+
+.aplicativo[data-tema="claro"] .campo-pesquisa input::placeholder {
+  color: #89968b;
+}
+
+.aplicativo[data-tema="claro"] .campo-filtro select option {
+  background: #ffffff;
+  color: #26352a;
+}
+
+.aplicativo[data-tema="claro"] .botao-notificacao,
+.aplicativo[data-tema="claro"] .botao-tema {
+  background: #ffffff;
+  border-color: #dce5dc;
+  color: #536257;
+}
+
+.aplicativo[data-tema="claro"] .botao-notificacao:hover,
+.aplicativo[data-tema="claro"] .botao-tema:hover {
+  border-color: #239352;
+  color: #239352;
+}
+
+.aplicativo[data-tema="claro"] .identificacao-maquina {
+  background: #ffffff;
+  border-color: #dce5dc;
+  color: #536257;
+}
+
+.aplicativo[data-tema="claro"] .tabela-pesagens th {
+  color: #718075;
+  border-color: #e3eae3;
+}
+
+.aplicativo[data-tema="claro"] .tabela-pesagens td {
+  color: #3d4d41;
+  border-color: #edf1ed;
+}
+
+.aplicativo[data-tema="claro"] .tabela-vazia {
+  color: #718075 !important;
+}
+
+.aplicativo[data-tema="claro"] .informacoes-maquina {
+  border-color: #e3eae3;
+}
+
+.aplicativo[data-tema="claro"] .informacoes-maquina strong {
+  color: #344438;
+}
+
+.aplicativo[data-tema="claro"] .cabecalho-grafico span,
+.aplicativo[data-tema="claro"] .cabecalho-tabela > span {
+  color: #239352;
+}
+
+.aplicativo[data-tema="claro"] .rodape-painel {
+  color: #89968b;
+}
+
+.aplicativo[data-tema="claro"] .limpar-pesquisa {
+  background: #e7f4e7;
+  color: #536257;
+}
+
+.aplicativo[data-tema="claro"] .limpar-pesquisa:hover {
+  background: #239352;
+  color: #ffffff;
+}
+
+.aplicativo[data-tema="claro"] .cartao-pagina:hover {
+  border-color: #9bcda6;
+}
+
+.aplicativo[data-tema="claro"] .etiqueta-conexao {
+  background: #e7f4e7;
+  color: #239352;
+}
+
+.aplicativo[data-tema="claro"] .etiqueta-conexao.offline {
+  background: #fff3d9;
+  color: #a87919;
+}
+
+.aplicativo[data-tema="claro"] .etiqueta-status.pendente {
+  background: #fff3d9;
+  color: #a87919;
+}
+
+.aplicativo[data-tema="claro"] .status-mqtt.conectado {
+  background: #e7f4e7;
+  color: #239352;
+}
+
+.aplicativo[data-tema="claro"] .status-mqtt.desconectado {
+  background: #fff3d9;
+  color: #a87919;
+}
+
+.aplicativo[data-tema="claro"] .cartao-estatistica .status-online {
+  color: #239352;
+}
+
+.aplicativo[data-tema="claro"] .cartao-estatistica .status-offline {
+  color: #a87919;
+}
+
+.aplicativo[data-tema="claro"] .indicador-maquina {
+  background: #239352;
+}
+
+/* ========================================
+   RESPONSIVIDADE GERAL
+======================================== */
+
+/* Telas menores e notebooks */
+
+@media (max-width: 1200px) {
+  .barra-superior {
+    align-items: flex-start;
+  }
+
+  .acoes-superiores {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .grupo-pesquisa-filtro {
+    max-width: 100%;
+  }
+
+  .grupo-pesquisa-filtro .campo-pesquisa {
+    width: 210px;
+  }
+
+  .grade-indicadores {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grade-cartoes-pagina {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Tablets */
+
+@media (max-width: 900px) {
+  .barra-lateral {
+    width: 190px;
+    padding: 22px 12px;
+  }
+
+  .logotipo {
+    font-size: 19px;
+    margin-bottom: 38px;
+  }
+
+  .barra-superior {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+  }
+
+  .acoes-superiores {
+    justify-content: flex-start;
+  }
+
+  .grupo-pesquisa-filtro {
+    flex: 1;
+  }
+
+  .grupo-pesquisa-filtro .campo-pesquisa {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .conteudo-painel {
+    padding: 24px 20px;
+  }
+}
+
+/* Celulares */
+
+@media (max-width: 650px) {
+  .barra-lateral {
+    width: 64px;
+    min-height: 100vh;
+    padding: 18px 7px;
+  }
+
+  .logotipo {
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 35px;
+  }
+
+  .logotipo > span,
+  .titulo-menu,
+  .item-navegacao span,
+  .rodape-lateral > div:last-child {
+    display: none;
+  }
+
+  .item-navegacao {
+    justify-content: center;
+    padding: 13px 8px;
+  }
+
+  .rodape-lateral {
+    justify-content: center;
+    padding: 12px 0;
+  }
+
+  .barra-superior {
+    padding: 18px 14px;
+    gap: 15px;
+  }
+
+  .barra-superior h1 {
+    font-size: 19px;
+  }
+
+  .acoes-superiores {
+    width: 100%;
+    gap: 8px;
+    justify-content: flex-start;
+  }
+
+  .grupo-pesquisa-filtro {
+    order: 2;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .grupo-pesquisa-filtro .campo-pesquisa {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .grupo-pesquisa-filtro .campo-filtro {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .status-mqtt {
+    font-size: 10px;
+    padding: 8px 9px;
+  }
+
+  .botao-tema,
+  .botao-notificacao {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
+
+  .conteudo-painel {
+    padding: 20px 13px;
+  }
+
+  .secao-boas-vindas {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 22px;
+  }
+
+  .secao-boas-vindas h2 {
+    font-size: 17px;
+  }
+
+  .grade-indicadores {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .cartao-estatistica {
+    padding: 18px;
+  }
+
+  .cartao-estatistica h2 {
+    font-size: 23px;
+  }
+
+  .cartao-grafico,
+  .cartao-tabela,
+  .cartao-pagina {
+    padding: 17px;
+    margin-top: 17px;
+  }
+
+  .cabecalho-grafico,
+  .cabecalho-tabela {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .area-grafico {
+    height: 230px;
+  }
+
+  .grade-cartoes-pagina {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .cabecalho-pagina h2 {
+    font-size: 18px;
+  }
+
+  .tabela-pesagens {
+    min-width: 720px;
+  }
+
+  .rodape-painel {
+    font-size: 9px;
+    padding-top: 23px;
+  }
+}
+
+/* Celulares pequenos */
+
+@media (max-width: 400px) {
+  .barra-lateral {
+    width: 55px;
+    padding: 15px 5px;
+  }
+
+  .barra-superior {
+    padding: 15px 10px;
+  }
+
+  .conteudo-painel {
+    padding: 16px 9px;
+  }
+
+  .acoes-superiores {
+    gap: 7px;
+  }
+
+  .status-mqtt {
+    padding: 7px;
+    font-size: 9px;
+  }
+
+  .cartao-estatistica,
+  .cartao-grafico,
+  .cartao-tabela,
+  .cartao-pagina {
+    padding: 14px;
+  }
+
+  .area-grafico {
+    height: 205px;
+  }
+
+  .identificacao-maquina {
+    font-size: 10px;
+    padding: 9px 10px;
+  }
+}
+
+/* Acessibilidade: respeita preferência por menos movimento */
+
+@media (prefers-reduced-motion: reduce) {
+  .aplicativo,
+  .aplicativo *,
+  .icone-tema {
+    animation: none !important;
+    transition: none !important;
+  }
+}
