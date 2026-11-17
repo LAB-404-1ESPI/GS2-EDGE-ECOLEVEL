@@ -216,6 +216,19 @@ Estrutura dos dados:
 
 O identificador único da sessão evita que uma mesma sessão seja registrada mais de uma vez.
 
+## Como realizar uma pesagem de teste no EcoLevel (Wokwi)
+
+1. **Inicie a simulação:** clique no botão verde (Play) no Wokwi.
+2. **Verifique a conexão:** abra o Serial Monitor e confira se o ESP32 está conectado ao EMQX.
+3. **Informe seu ID:** digite seu identificador de usuário no Serial Monitor e pressione Enter.
+4. **Inicie a pesagem:** clique no botão verde de iniciar no circuito.
+5. **Simule o peso:** clique no sensor da balança (HX711) e informe o peso desejado.
+6. **Aguarde:** espere alguns segundos até o sinal sonoro de conclusão.
+7. **Confira o Serial Monitor:** verifique a simulação da etiqueta e a mensagem **"Pesagem enviada com sucesso"**.
+8. **Verifique o dashboard:** acesse o EcoLevel na Vercel, entre na aba **Pesagens** e confira se o novo registro apareceu.
+
+**Pronto!** Se a pesagem aparecer no dashboard com os dados corretos, o teste foi concluído com sucesso.
+
 ## 🌱 Relação com a proposta CitizenTech
 
 O EcoLevel está alinhado à proposta CitizenTech ao utilizar tecnologia para contribuir com um problema coletivo: o descarte inadequado de resíduos recicláveis.
